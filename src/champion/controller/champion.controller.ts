@@ -1,5 +1,5 @@
-import { Controller, Get, Query, Post, Delete, Body } from '@nestjs/common'
-import { ApiTags, ApiOkResponse } from '@nestjs/swagger'
+import { Controller, Get, Query, Delete, Body, HttpStatus, HttpCode } from '@nestjs/common'
+import { ApiTags, ApiOkResponse, ApiResponse } from '@nestjs/swagger'
 import { ChampionDTO } from '../dto/champion.dto'
 import { QueryBus, CommandBus } from '@nestjs/cqrs'
 import { GetChampionQuery } from '../queries/impl/get-champion.query'
@@ -21,6 +21,7 @@ export class ChampionController {
   }
 
   @Delete()
+  @HttpCode(HttpStatus.NO_CONTENT)
   deleteChampion (@Body() { champion }: GetChampionInput) {
     return this.commandBus.execute(new DeleteChampionCommand(champion))
   }
