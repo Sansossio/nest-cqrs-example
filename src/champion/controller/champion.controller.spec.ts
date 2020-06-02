@@ -7,8 +7,12 @@ describe('Champion Controller', () => {
     execute: jest.fn()
   }
 
+  const commandBus = {
+    execute: jest.fn()
+  }
+
   beforeEach(async () => {
-    controller = new ChampionController(queryBus as any)
+    controller = new ChampionController(queryBus as any, commandBus as any)
   })
 
   it('should be defined', () => {
