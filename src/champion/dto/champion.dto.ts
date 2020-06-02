@@ -1,9 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger'
 
 export class ChampionDTO {
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Champion id'
+  })
   id: number
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Champion name'
+  })
   name: string
 }
