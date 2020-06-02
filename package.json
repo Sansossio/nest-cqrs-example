@@ -1,10 +1,9 @@
 {
   "name": "nest-cqrs-example",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "description": "Playing with nestjs cqrs",
+  "author": "Julio Sansossio",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -62,5 +61,12 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sansossio/nest-cqrs-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sansossio/nest-cqrs-example/issues"
   }
 }
