@@ -1,15 +1,14 @@
-import { Test, TestingModule } from '@nestjs/testing'
 import { ChampionController } from './champion.controller'
 
 describe('Champion Controller', () => {
   let controller: ChampionController
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [ChampionController]
-    }).compile()
+  const queryBus = {
+    execute: jest.fn()
+  }
 
-    controller = module.get<ChampionController>(ChampionController)
+  beforeEach(async () => {
+    controller = new ChampionController(queryBus as any)
   })
 
   it('should be defined', () => {
