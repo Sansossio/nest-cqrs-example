@@ -1,5 +1,5 @@
-import { Controller, Get, Param, Query } from '@nestjs/common'
-import { ApiResponse, ApiTags, ApiOperation, ApiHeader, ApiOkResponse } from '@nestjs/swagger'
+import { Controller, Get, Query } from '@nestjs/common'
+import { ApiTags, ApiOkResponse } from '@nestjs/swagger'
 import { ChampionDTO } from '../dto/champion.dto'
 import { QueryBus } from '@nestjs/cqrs'
 import { GetChampionQuery } from '../queries/impl/get-champion.query'
